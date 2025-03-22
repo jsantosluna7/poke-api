@@ -1,0 +1,32 @@
+<div class="box">
+  <div class="container">
+    <div class="img">
+      <img src="/img/title/treinador-pk.png" />
+    </div>
+    <div class="login-content">
+      <form [formGroup]="loginForm">
+        <img src="/img/title/pokedexplore.svg" />
+        <h2 class="title">Bienvenido</h2>
+        <div class="input-div one">
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="div">
+            <h5>Email</h5>
+            <input type="text" class="input" formControlName="email" (focus)="addcl($event)" (blur)="remcl($event)"/>
+          </div>
+        </div>
+        <div class="input-div pass">
+          <div class="i">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="div">
+            <h5>Password</h5>
+            <input type="password" class="input" formControlName="password" (focus)="addcl($event)" (blur)="remcl($event)"/>
+          </div>
+        </div>
+        <button class="btn" (click)="login()">Inicia Sesión</button>
+      </form>
+    </div>
+  </div>
+</div>

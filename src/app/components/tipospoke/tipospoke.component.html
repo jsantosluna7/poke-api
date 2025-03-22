@@ -1,0 +1,150 @@
+<!-- SLIDER -->
+
+<div class="types-swiper">
+  <swiper-container
+    pagination="false"
+    grab-cursor="true"
+    slides-per-view="auto"
+    autoplay="true"
+    autoplay-delay="3000"
+    loop="true"
+  >
+    @for (slide of slides; track $index) {
+    <swiper-slide>
+      <button type="button" (click)="pokeTypes(slide.name)">
+        <img [src]="slide.img" alt="tipos" [title]="slide.name" />
+      </button>
+    </swiper-slide>
+    }
+  </swiper-container>
+</div>
+
+<!-- CARDS -->
+<div class="main-box">
+  <div class="todos-pokemones">
+    @for (item of pokemons; track $index) {
+    <button
+      type="button"
+      class="card-button"
+      data-bs-toggle="modal"
+      data-bs-target="#pokeCard"
+      (click)="selectPokemon(item)"
+    >
+      <div [className]="`card card-${item.colorType}`">
+        <div class="side-1">
+          <img [src]="item.img" alt="pokemon image" />
+          <p>{{ item.name }}</p>
+        </div>
+        <div class="side-2">
+          @for (item of item.types; track $index) { @if (item.slot > 1) {
+          <div class="types">
+            <div [className]="`type ${item.type.name}`">
+              <img [src]="`/img/icons/${item.type.name}.svg`" alt="type" />
+              <p>{{ item.type.name }}</p>
+            </div>
+          </div>
+          }@else {
+          <div class="types-one">
+            <div [className]="`type ${item.type.name}`">
+              <img [src]="`/img/icons/${item.type.name}.svg`" alt="type" />
+              <p>{{ item.type.name }}</p>
+            </div>
+          </div>
+          } }
+        </div>
+        <div class="side-3">
+          <div class="datos">
+            <div class="altura">
+              <p class="data-p">{{ item.height }} M</p>
+              <div class="altura-icon">
+                <img src="/img/others/altura.svg" alt="altura" />
+                <p>Altura</p>
+              </div>
+            </div>
+            <div class="peso">
+              <p class="data-p">{{ item.weight }} KG</p>
+              <div class="peso-icon">
+                <img src="/img/others/peso.svg" alt="peso" />
+                <p>Peso</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </button>
+    }
+  </div>
+</div>
+
+<!-- MODAL -->
+
+<div class="modal fade" id="pokeCard" tabindex="-1" aria-labelledby="pokeCardLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header border-0">
+              <div class="modal-body">
+                @if (selectedPokemon) {
+                  <div [className]="`card-${selectedPokemon.colorType} card-pokemon p-3 pb-lg-5 px-lg-5`">
+                    <button type="button" class="button-close" data-bs-dismiss="modal">
+                        <img src="/img/others/close-button.svg" alt="close-button" />
+                    </button>
+                    <img class="card-pokemon-img" [src]="selectedPokemon.img" alt="Pokémon selecionado" /><span
+                        class="card-pokemon-name py-2">{{selectedPokemon.name }}</span>
+                    <div class="d-flex border-bottom border-top justify-content-between w-100 aling-items-center py-2">
+                        <div
+                            class="d-flex flex-column align-items-center justify-content-center text-center w-100 mx-2">
+                            <span class="w-100 mx-4 pokemon-stats">{{ selectedPokemon.height }} M</span>
+                            <p class="d-flex align-items-center m-0">
+                                <img src="/img/others/altura.svg" alt="altura" />
+                                Altura
+                            </p>
+                        </div>
+                        <div
+                            class="d-flex align-items-center border-end border-start justify-content-center w-100 gap-3 px-3">
+                            @for (type of selectedPokemon.types; track $index) {
+                            <img width="40" [src]="`/img/types/${type.type.name}.svg`" alt="type" [title]="type.type.name"/>
+                            }
+                        </div>
+                        <div
+                            class="d-flex flex-column align-items-center justify-content-center text-center w-100 mx-2">
+                            <span class="w-100 mx-4 pokemon-stats">{{ selectedPokemon.weight }} Kg</span>
+                            <p class="d-flex align-items-center m-0">
+                                <img src="/img/others/peso.svg" alt="peso" />
+                                Peso
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-100 pt-4">
+                      @for (stat of selectedPokemon.stats; track $index) {
+                        <div class="row align-items-center">
+                            <div class="col-1">
+                                <img [src]="`/img/stadistics/${stat.stat.name}.svg`" alt="" />
+                            </div>
+                            <div class="col-1">
+                                <span>{{ stat.base_stat }}</span>
+                            </div>
+                            <div class="col">
+                                <div class="status-bar-box">
+                                    <div class="status-bar-100" [title]="stat.stat.name"
+                                        [style]="`width: ${formatW(stat.base_stat)}%`"></div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        <div class="d-flex align-items-center gap-2 pt-2">
+                            <span>Debilidades:</span>
+                            <div class="d-flex gap-2">
+                                @for (debility of selectedPokemon.damage; track $index) {
+                                <img class="scale-in-center" width="28" [src]="`/img/types/${debility.name}.svg`"
+                                    [alt]="debility.name" [title]="debility.name"/>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

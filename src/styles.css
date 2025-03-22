@@ -1,1 +1,198 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root{
+    --grass: #66CC33;
+    --poison: #AA66CC;
+    --bug: #99CC33;
+    --dark: #333333;
+    --dragon: #7038F8;
+    --electric: #FFCC33;
+    --fairy: #FF99CC;
+    --fighting: #FF3333;
+    --fire: #FF6633;
+    --flying: #6699FF;
+    --ghost: #6666CC;
+    --ground: #FFCC66;
+    --ice: #99FFFF;
+    --normal: #FFCC99;
+    --psychic: #FF6699;
+    --rock: #CC9966;
+    --steel: #CCCCCC;
+    --water: #3399FF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    background-color: #F6F8FC;
+    background-image: url('../public/img/others/pokeball.svg');
+    background-size: 650px;
+    background-repeat: no-repeat;
+    background-position-x: -210px;
+    background-position-y: -210px;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+ul{
+    margin-bottom: 0;
+}
+
+/* TYPES */
+
+.grass{
+    background-color: var(--grass);
+}
+
+.poison{
+    background-color: var(--poison);
+}
+
+.bug{
+    background-color: var(--bug);
+}
+
+.dark{
+    background-color: var(--dark);
+}
+
+.dragon{
+    background-color: var(--dragon);
+}
+
+.electric{
+    background-color: var(--electric);
+}
+
+.fairy{
+    background-color: var(--fairy);
+}
+
+.fighting{
+    background-color: var(--fighting);
+}
+
+.fire{
+    background-color: var(--fire);
+}
+
+.flying{
+    background-color: var(--flying);
+}
+
+.ghost{
+    background-color: var(--ghost);
+}
+
+.ground{
+    background-color: var(--ground);
+}
+
+.ice{
+    background-color: var(--ice);
+}
+
+.normal{
+    background-color: var(--normal);
+}
+
+.psychic{
+    background-color: var(--psychic);
+}
+
+.rock{
+    background-color: var(--rock);
+}
+
+.steel{
+    background-color: var(--steel);
+}
+
+.water{
+    background-color: var(--water);
+}
+
+
+/* BACKGROUND CARD */
+
+.card-grass{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--grass), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-poison{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--poison), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-bug{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--bug), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-dark{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--dark), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-dragon{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--dragon), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-electric{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--electric), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-fairy{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--fairy), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-fighting{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--fighting), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-fire{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--fire), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-flying{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--flying), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-ghost{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--ghost), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-ground{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--ground), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-ice{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--ice), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-normal{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--normal), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-psychic{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--psychic), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-rock{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--rock), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-steel{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--steel), rgba(6, 14, 32, 0.8)) !important;
+}
+
+.card-water{
+    background-image: url('/img/others/half-pokeball.svg'), radial-gradient(80% 80% at 50% bottom, var(--water), rgba(6, 14, 32, 0.8)) !important;
+}

@@ -1,0 +1,73 @@
+<nav>
+  <button
+    class="button"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasRight"
+    aria-controls="offcanvasRight"
+  >
+  <i class="fa-solid fa-bars fa-2xl"></i>
+  </button>
+
+  <div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Menú</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body d-flex justify-content-center align-items-center">
+      <ul class="side-nav-links">
+        <li class="side-links side-li-1">
+          <img src="/img/others/game.png" alt="" />
+          <a routerLink="/home/obtener">Obtener</a>
+        </li>
+        <li class="side-links side-li-2">
+          <img src="/img/others/target-logo.svg" alt="" />
+          <a routerLink="/home/tipos">Tipos</a>
+        </li>
+        <li class="side-links side-li-3">
+          <img src="/img/others/search.svg" alt="" />
+          <a routerLink="/home/buscar">Buscar</a>
+        </li>
+        <li class="side-li-4">
+          <button class="side-logOut" (click)="logout()">Cerrar Sesión</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <div class="top">
+      <a routerLink="/home/obtener" class="router-link">
+        <img class="logo" src="/img/title/pokedexplore.svg" alt="logo" />
+      </a>
+      <button class="logOut" (click)="logout()">Cerrar Sesión</button>
+    </div>
+    <div class="links">
+      <ul class="nav-links">
+        <li class="links li-1">
+          <img src="/img/others/game.png" alt="" />
+          <a routerLink="/home/obtener">Obtener</a>
+        </li>
+        <li class="links li-2">
+          <img src="/img/others/target-logo.svg" alt="" />
+          <a routerLink="/home/tipos">Tipos</a>
+        </li>
+        <li class="links li-3">
+          <img src="/img/others/search.svg" alt="" />
+          <a routerLink="/home/buscar">Buscar</a>
+        </li>
+        <li class="links li-4"></li>
+      </ul>
+    </div>
+  </div>
+</nav>

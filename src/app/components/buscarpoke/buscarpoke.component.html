@@ -1,0 +1,79 @@
+<div class="main-box">
+  <div class="search-bar">
+    <form [formGroup]="pokeForm">
+      <input
+        type="text"
+        placeholder="¡Busca tu Pokémon!"
+        formControlName="pokemon"
+      />
+      <button type="submit" (click)="pokemonSearch()">
+        <img src="/img/others/pokeball.svg" alt="pokeball" />
+      </button>
+    </form>
+  </div>
+  @if (pokemones) {
+  <button
+    type="button"
+    class="card-button"
+    data-bs-toggle="modal"
+    data-bs-target="#pokeCard"
+  >
+    <div [className]="`card card-${colorType}`">
+      <div class="side-1">
+        <img [src]="img" alt="pokemon image" />
+        <p>{{ name }}</p>
+      </div>
+      <div class="side-2">
+        @for (item of types[0]; track $index) { @if (item.slot > 1) {
+        <div class="types">
+          <div [className]="`type ${item.type.name}`">
+            <img [src]="`/img/icons/${item.type.name}.svg`" alt="type" />
+            <p>{{ item.type.name }}</p>
+          </div>
+        </div>
+        }@else {
+        <div class="types-one">
+          <div [className]="`type ${item.type.name}`">
+            <img [src]="`/img/icons/${item.type.name}.svg`" alt="type" />
+            <p>{{ item.type.name }}</p>
+          </div>
+        </div>
+        } }
+      </div>
+      <div class="side-3">
+        <div class="datos">
+          <div class="altura">
+            <p class="data-p">{{ height }} M</p>
+            <div class="altura-icon">
+              <img src="/img/others/altura.svg" alt="altura" />
+              <p>Altura</p>
+            </div>
+          </div>
+          <div class="peso">
+            <p class="data-p">{{ weight }} KG</p>
+            <div class="peso-icon">
+              <img src="/img/others/peso.svg" alt="peso" />
+              <p>Peso</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </button>
+  }@else {
+  <app-obtenerpoke class="obtenerPokemon"></app-obtenerpoke>
+  }
+</div>
+
+<!-- MODAL -->
+<app-modal
+  [name]="name"
+  [img]="img"
+  [height]="height"
+  [weight]="weight"
+  [types]="types"
+  [colorType]="colorType"
+  [stats]="stats"
+  [debilities]="debilities"
+  [id]="id"
+></app-modal>

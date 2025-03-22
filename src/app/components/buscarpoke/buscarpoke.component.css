@@ -1,0 +1,208 @@
+.main-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.card-button {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.obtenerPokemon{
+    margin-top: -110px;
+    margin-bottom: -50px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 90px;
+    margin-bottom: 95px;
+}
+
+.search-bar input {
+    font-size: 15px;
+    padding: 30px 400px 30px 25px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    z-index: 90;
+    -webkit-box-shadow: 0px 17px 36px -10px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 17px 36px -10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 17px 36px -10px rgba(0, 0, 0, 0.22);
+}
+
+.search-bar button {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background-color: #FF5350;
+    padding: 5px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    z-index: 91;
+    -webkit-box-shadow: 0px 8px 36px 1px rgba(255, 83, 80, 0.90);
+    -moz-box-shadow: 0px 8px 36px 1px rgba(255, 83, 80, 0.90);
+    box-shadow: 0px 8px 36px 1px rgba(255, 83, 80, 0.90);
+
+}
+
+.search-bar button img {
+    width: 35px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 350px;
+    border: 1px solid hsla(0, 0%, 100%, .2);
+    border-radius: 42px;
+    background-color: #050B1A;
+    background-size: 50%, auto;
+    background-repeat: no-repeat;
+    background-position: 0, bottom 50% center;
+    opacity: 1;
+    transform: none;
+    backdrop-filter: blur(10px);
+}
+
+.side-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    color: white;
+}
+
+.side-1 img {
+    width: 280px;
+    position: absolute;
+    top: -105px;
+    filter: saturate(1.9);
+}
+
+.side-1 p {
+    padding-top: 60px;
+    padding-bottom: 1px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.side-2{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.types{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.types-one{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.type{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    padding: 6px 20px;
+    border-radius: 8px;
+}
+
+.type p{
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.type img{
+    height: 18px;
+    width: 18px;
+}
+
+.datos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.data-p{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.altura, .peso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.altura-icon, .peso-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.altura-icon img, .peso-icon img{
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 1050px){
+	
+}
+
+@media screen and (max-width: 1000px){
+	
+}
+
+@media screen and (max-width: 900px){
+
+    .card {
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .search-bar{
+        margin-top: 100px;
+    }
+    
+    .search-bar input {
+        padding: 30px 80px 30px 25px;
+    }
+    
+    .search-bar button {
+        right: 20px;
+        top: 20px;
+    
+    }
+    
+    .search-bar button img {
+        width: 35px;
+    }
+}
