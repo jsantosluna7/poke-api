@@ -1,13 +1,15 @@
 import { Routes } from '@angular/router';
-import { AuthGuardService } from './services/auth-guard.service';
+// import { AuthGuardService } from './services/auth-guard.service';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./components/login/login.component').then(
-        (m) => m.LoginComponent
-      ),
+    redirectTo: 'home/obtener',
+    pathMatch: 'full',
+    // loadComponent: () =>
+    //   import('./components/login/login.component').then(
+    //     (m) => m.LoginComponent
+    //   ),
   },
   {
     path: 'home',
@@ -38,6 +40,7 @@ export const routes: Routes = [
           ),
       },
     ],
-    canActivate: [AuthGuardService]
+    // canActivate: [AuthGuardService]
   },
+  {path: '**', redirectTo: 'home/obtener'}
 ];
